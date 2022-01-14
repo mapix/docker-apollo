@@ -103,6 +103,7 @@ Portal 实例接受参数:
 > - PORTAL_DB_PWD: 数据库密码
 > - PORTAL_PORT: portal服务的端口,默认8070.若网络模式为host,可更改.
 > - PORTAL_LDAP: 若要开启LDAP登录验证,设置该值为**TRUE**,并挂载配置文件到`/apollo-portal/config/application-ldap.yml`容器中,详情参考[官方说明](https://github.com/ctripcorp/apollo/wiki/Portal-%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD).
+> - PORTAL_OIDC: 若要开启OIDC登录验证,设置该值为**TRUE**,并挂载配置文件到`/apollo-portal/config/application-oidc.yml`容器中,详情参考[官方说明](https://www.apolloconfig.com/#/zh/development/portal-how-to-implement-user-login-function?id=%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f%e4%b8%89%ef%bc%9a-%e6%8e%a5%e5%85%a5oidc).
 > - DEV_URL: 远程dev服务,格式为http://**ip:port** 或 **domain:port** 不可与DEV_DB同时指定,数据库中ServerConfig中eureka.service.url的地址与端口需正确.
 > - FAT_URL: 远程fat服务,格式为http://**ip:port** 或 **domain:port** 不可与FAT_DB同时指定,数据库中ServerConfig中eureka.service.url的地址与端口需正确.
 > - UAT_URL: 远程uat服务,格式为http://**ip:port** 或 **domain:port** 不可与UAT_DB同时指定,数据库中ServerConfig中eureka.service.url的地址与端口需正确.
