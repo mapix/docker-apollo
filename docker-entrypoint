@@ -88,6 +88,14 @@ function startPortal()
       fi
     fi
 
+    if [[ "${PORTAL_OIDC}" == [tT][rR][uU][eE] ]];then
+      if [[ -f "${portalPath}/config/application-oidc.yml" ]];then
+        sed -i -e "/^SERVER_PORT=.*$/a\export JAVA_OPTS=\"\$JAVA_OPTS -Dspring.profiles.active=github,oidc\"" ${portalShellPath}
+      else
+        echo "If use OIDC auth, please create application-oidc.yml file in ${portalPath}/config/ directory."
+      fi
+    fi
+    
     if [[ -n "${DEV_URL}" ]];then
         sed -i -r "/-Ddev_meta=.*$/d" ${portalShellPath}
         sed -i -e "/^SERVER_PORT=.*$/a\export JAVA_OPTS=\"\$JAVA_OPTS -Ddev_meta=${DEV_URL}/\"" ${portalShellPath}
